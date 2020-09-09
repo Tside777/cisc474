@@ -5,8 +5,10 @@ $(function () {
 
     $("#nameform").on("submit", function (event) {
         event.preventDefault();
-        $(".jumbotron").append($("#fname").val() + " " + $("#lname").val());
-        $(".jumbotron").removeClass('d-none');
+        var fname = $('#fname').val();
+        var lname = $('#lname').val();
+        var newHTML= `<h1>${fname} ${lname}</h1>`
+        $(".jumbotron").removeClass('d-none').html(newHTML);;
 
         console.log($("#fname").val());
         console.log('should be showing jumbotron');
